@@ -11,7 +11,4 @@ va applicato uno sconto del 40% per gli over 65.
 3. imposto variabili: prezzo,discount,totale,totale fixed 
 4. check convalida se è un numero e positivo 
 5. check km se è un numero e superiore a 0
-6. sconto minorenni check if se età è compresa tra
-   0 e 18 underage become true
-7. sconto over 65 se età > 65 applico sconto overAge become true
-8. fixo totale per centesimi 
+6. fixo totale per centesimi 
