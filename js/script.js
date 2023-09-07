@@ -19,6 +19,10 @@ const outputTag = document.getElementById ('output');
 // price for km
 const priceForKm = 0.21;
 
+// discount
+const underDiscount = 20;
+const overDiscount = 40;
+
 // variables let
 let ticketCost,ticketDiscount,message;
 
@@ -70,9 +74,14 @@ console.log(dataValid);
 
 if(dataValid){
   ticketCost = priceForKm * kmToDo;
+  if(underAge){
+    ticketDiscount = ticketCost - (ticketCost * (underDiscount / 100));
+  }else if(overAge){
+    ticketDiscount = ticketCost - (ticketCost * (overDiscount / 100));
+  }
 }
 
-console.log(ticketCost);
+console.log(ticketDiscount);
 
 
 
