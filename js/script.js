@@ -9,8 +9,8 @@ va applicato uno sconto del 40% per gli over 65.
 2. trasforma i prompt età e km in un int
 3. imposto variabile prezzo 0.21
 4. sconto minorenni check if se età è compresa tra
-   0 e 18 
-5. sconto over 65 se età > 65 applico sconto
+   0 e 18 underage become true
+5. sconto over 65 se età > 65 applico sconto overAge become true
  */
 
 // output price with discount
@@ -37,7 +37,7 @@ const age = parseInt(prompt('How old are you?'));
 if(isNaN(age)){
   message = 'Error! insert numbers for age!!'
   dataValid = false;
-}else if ( age < 0){
+}else if ( age <= 0){
   message = 'Error! insert positive number!!'
   dataValid = false;
 }else if (age > 0 && age <= 18) {
@@ -68,6 +68,16 @@ console.log(dataValid);
 
 // cost price without discount
 
-ticketCost = priceForKm * kmToDo;
+if(dataValid){
+  ticketCost = priceForKm * kmToDo;
+}
 
 console.log(ticketCost);
+
+
+
+// add const for html print cost with eur
+const textPrint =  `The price for your ticket is: ${ticketCost}`;
+
+outputTag.innerHTML = textPrint + '€';
+ console.log(outputTag);
