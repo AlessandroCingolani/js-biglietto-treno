@@ -19,12 +19,28 @@ const outputTag = document.getElementById ('output');
 // price for km
 const priceForKm = 0.21;
 
+// variables let
+let ticketCost,ticketDiscount,message;
+
+
+
 // prompt for age in int value
 const age = parseInt(prompt('How old are you?'));
 
+if(isNaN(age)){
+  message = 'Error! insert numbers for age!!'
+}
+
+console.log(message);
 console.log(age);
 
 // prompt for km want travel
 const kmToDo = parseInt(prompt('How many kilometers you want to travel'));
 
 console.log(kmToDo);
+
+// cost price without discount
+
+ticketCost = priceForKm * kmToDo;
+
+console.log(ticketCost);
