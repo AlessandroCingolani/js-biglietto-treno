@@ -16,7 +16,7 @@ va applicato uno sconto del 40% per gli over 65.
 8.fixo totale per centesimi 
  */
 
-// output price with discount
+// output price 
 const outputTag = document.getElementById ('output');
 
 // price for km
