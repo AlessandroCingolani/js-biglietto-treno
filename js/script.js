@@ -42,10 +42,6 @@ if(isNaN(age)){
 }
 
 
-console.log(message);
-console.log(age);
-console.log(dataValid);
-
 // prompt for km want travel
 const kmToDo = parseInt(prompt('How many kilometers you want to travel'));
 if(isNaN(kmToDo)){
@@ -56,9 +52,6 @@ if(isNaN(kmToDo)){
   dataValid = false;
 }
 
-console.log(message);
-console.log(kmToDo);
-console.log(dataValid);
 
 // cost price without discount
 
@@ -77,6 +70,12 @@ if(dataValid){
   const textPrint =  `The price for your ticket is: ${fixedTotal}`;
 
   outputTag.innerHTML = textPrint + '€';
+  console.log(outputTag);
+}
+
+// Error message
+if(!(dataValid)) {
+  outputTag.innerHTML = 'Enter correct information!!!';
   console.log(outputTag);
 }
 
