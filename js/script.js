@@ -29,6 +29,10 @@ const age = parseInt(prompt('How old are you?'));
 
 if(isNaN(age)){
   message = 'Error! insert numbers for age!!'
+}else if ( age <= 0){
+  message = 'Error! insert positive number!!'
+}else if (age > 0 || age <= 18) {
+  message = 'minorenne'
 }
 
 console.log(message);
