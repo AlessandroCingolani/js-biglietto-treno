@@ -15,3 +15,16 @@ va applicato uno sconto del 40% per gli over 65.
 
 // output price with discount
 const outputTag = document.getElementById ('output');
+
+// price for km
+const priceForKm = 0.21;
+
+// prompt for age in int value
+const age = parseInt(prompt('How old are you?'));
+
+console.log(age);
+
+// prompt for km want travel
+const kmToDo = parseInt(prompt('How many kilometers you want to travel'));
+
+console.log(kmToDo);
