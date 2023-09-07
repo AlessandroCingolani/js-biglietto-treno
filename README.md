@@ -8,7 +8,7 @@ va applicato uno sconto del 40% per gli over 65.
 
 1. chiedere età e quanti chilometri 
 2. trasforma i prompt età e km in un int
-3. imposto variabili: prezzo,discount,totale,totale fixed 
+3. imposto variabili: prezzo,discount,totale fixed 
 4. check convalida se è un numero e positivo 
 5. check km se è un numero e superiore a 0
 6. fixo totale per centesimi 
