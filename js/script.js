@@ -7,7 +7,7 @@ va applicato uno sconto del 40% per gli over 65.
 
 1. chiedere età e quanti chilometri 
 2. trasforma i prompt età e km in un int
-3. imposto variabili: prezzo,discount,totale,totale fixed 
+3. imposto variabili: prezzo,discount,,totale fixed 
 4. check convalida se è un numero e positivo 
 5. check km se è un numero e superiore a 0
 6. fixo totale per centesimi 
@@ -24,7 +24,7 @@ const underDiscount = 20;
 const overDiscount = 40;
 
 // variables let
-let ticketCost,message,fixedTotal;
+let ticketCost,fixedTotal;
 
 // dataValid
 let dataValid = true;
@@ -34,10 +34,8 @@ let dataValid = true;
 const age = parseInt(prompt('How old are you?'));
 
 if(isNaN(age)){
-  message = 'Error! insert numbers for age!!'
   dataValid = false;
 }else if ( age <= 0){
-  message = 'Error! insert positive number!!'
   dataValid = false;
 }
 
@@ -45,10 +43,8 @@ if(isNaN(age)){
 // prompt for km want travel
 const kmToDo = parseInt(prompt('How many kilometers you want to travel'));
 if(isNaN(kmToDo)){
-  message = 'insert a number for Km!!'
   dataValid = false;
 }else if ( kmToDo <= 0){
-  message = 'Error! insert positive number!!'
   dataValid = false;
 }
 
@@ -68,10 +64,7 @@ if(dataValid){
   const textPrint =  `The price for your ticket is: ${fixedTotal}`;
 
   outputTag.innerHTML = textPrint + '€';
-}
-
-// Error message
-if(!(dataValid)) {
+}else {
   outputTag.innerHTML = 'Enter correct informations!!!';
 }
 
