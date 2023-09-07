@@ -53,8 +53,7 @@ if(isNaN(kmToDo)){
 }
 
 
-// cost price without discount
-
+// cost price 
 if(dataValid){
   ticketCost = priceForKm * kmToDo;
   if (age < 18){
@@ -64,6 +63,7 @@ if(dataValid){
   }else{
     total = ticketCost;
   }
+
   // fixed total for price with cents
   fixedTotal = total.toFixed(2);
   // add const for html print cost with eur
@@ -75,7 +75,7 @@ if(dataValid){
 
 // Error message
 if(!(dataValid)) {
-  outputTag.innerHTML = 'Enter correct information!!!';
+  outputTag.innerHTML = 'Enter correct informations!!!';
   console.log(outputTag);
 }
 
