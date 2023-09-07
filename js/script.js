@@ -7,10 +7,13 @@ va applicato uno sconto del 40% per gli over 65.
 
 1. chiedere età e quanti chilometri 
 2. trasforma i prompt età e km in un int
-3. imposto variabile prezzo 0.21
-4. sconto minorenni check if se età è compresa tra
+3. imposto variabili: prezzo,discount,totale,totale fixed 
+4. check convalida se è un numero e positivo 
+5. check km se è un numero e superiore a 0
+6. sconto minorenni check if se età è compresa tra
    0 e 18 underage become true
-5. sconto over 65 se età > 65 applico sconto overAge become true
+7. sconto over 65 se età > 65 applico sconto overAge become true
+8.fixo totale per centesimi 
  */
 
 // output price with discount
@@ -24,7 +27,7 @@ const underDiscount = 20;
 const overDiscount = 40;
 
 // variables let
-let ticketCost,ticketDiscount,message;
+let ticketCost,total,message,fixedTotal;
 
 // dataValid
 let dataValid = true;
@@ -75,18 +78,22 @@ console.log(dataValid);
 if(dataValid){
   ticketCost = priceForKm * kmToDo;
   if(underAge){
-    ticketDiscount = ticketCost - (ticketCost * (underDiscount / 100));
+    total = ticketCost - (ticketCost * (underDiscount / 100));
   }else if(overAge){
-    ticketDiscount = ticketCost - (ticketCost * (overDiscount / 100));
+    total = ticketCost - (ticketCost * (overDiscount / 100));
+  }else{
+    total = ticketCost;
   }
 }
 
-console.log(ticketDiscount);
+// fixed total for price with cents
+fixedTotal = total.toFixed(2);
 
+console.log(total);
 
 
 // add const for html print cost with eur
-const textPrint =  `The price for your ticket is: ${ticketCost}`;
+const textPrint =  `The price for your ticket is: ${fixedTotal}`;
 
 outputTag.innerHTML = textPrint + '€';
  console.log(outputTag);
