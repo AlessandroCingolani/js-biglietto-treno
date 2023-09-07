@@ -24,7 +24,7 @@ const underDiscount = 20;
 const overDiscount = 40;
 
 // variables let
-let ticketCost,total,message,fixedTotal;
+let ticketCost,message,fixedTotal;
 
 // dataValid
 let dataValid = true;
@@ -57,15 +57,13 @@ if(isNaN(kmToDo)){
 if(dataValid){
   ticketCost = priceForKm * kmToDo;
   if (age < 18){
-    total = ticketCost - (ticketCost * (underDiscount / 100));
+    ticketCost = ticketCost - (ticketCost * (underDiscount / 100));
   }else if(age > 65){
-    total = ticketCost - (ticketCost * (overDiscount / 100));
-  }else{
-    total = ticketCost;
+    ticketCost = ticketCost - (ticketCost * (overDiscount / 100));
   }
 
   // fixed total for price with cents
-  fixedTotal = total.toFixed(2);
+  fixedTotal = ticketCost.toFixed(2);
   // add const for html print cost with eur
   const textPrint =  `The price for your ticket is: ${fixedTotal}`;
 
