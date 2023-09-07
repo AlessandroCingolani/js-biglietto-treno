@@ -22,17 +22,24 @@ const priceForKm = 0.21;
 // variables let
 let ticketCost,ticketDiscount,message;
 
+// dataValid
+let dataValid = true;
+
 // variables for discount 
 let underAge = false;
 let overAge = false;
+
+
 
 // prompt for age in int value
 const age = parseInt(prompt('How old are you?'));
 
 if(isNaN(age)){
   message = 'Error! insert numbers for age!!'
-}else if ( age <= 0){
+  dataValid = false;
+}else if ( age < 0){
   message = 'Error! insert positive number!!'
+  dataValid = false;
 }else if (age > 0 && age <= 18) {
   message = 'minorenne'
   underAge = true;
@@ -43,17 +50,21 @@ if(isNaN(age)){
 
 console.log(message);
 console.log(age);
+console.log(dataValid);
 
 // prompt for km want travel
 const kmToDo = parseInt(prompt('How many kilometers you want to travel'));
 if(isNaN(kmToDo)){
   message = 'insert a number for Km!!'
+  dataValid = false;
 }else if ( kmToDo <= 0){
   message = 'Error! insert positive number!!'
+  dataValid = false;
 }
 
 console.log(message);
 console.log(kmToDo);
+console.log(dataValid);
 
 // cost price without discount
 
