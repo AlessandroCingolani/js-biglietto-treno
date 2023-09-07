@@ -70,13 +70,11 @@ if(dataValid){
   const textPrint =  `The price for your ticket is: ${fixedTotal}`;
 
   outputTag.innerHTML = textPrint + '€';
-  console.log(outputTag);
 }
 
 // Error message
 if(!(dataValid)) {
   outputTag.innerHTML = 'Enter correct informations!!!';
-  console.log(outputTag);
 }
 
 
